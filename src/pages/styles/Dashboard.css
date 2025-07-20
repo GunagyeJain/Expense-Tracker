@@ -1,0 +1,5 @@
+.dashboard-container {
+    background-color: var(--muted);
+    height: 100%;
+    width: 100%;
+}

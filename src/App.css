@@ -1,0 +1,53 @@
+.app-container {
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 50px 1fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--background);
+  transition: grid-template-columns 0.3s ease;
+}
+
+/* Sidebar closed state */
+.app-container.sidebar-closed {
+  grid-template-columns: 0px 1fr;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--sidebar-background);
+  color: var(--sidebar-foreground);
+  border-right: 1px solid var(--sidebar-border);
+  overflow: hidden;
+  /* sidebar animation */
+  transition: all 0.2s ease;
+}
+
+/* hiding sidebar content when closing */
+.app-container.sidebar-closed .sidebar {
+  padding: 0;
+  border: none;
+}
+
+.header {
+  grid-area: header;
+  background-color: var(--card);
+  color: var(--card-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.content {
+  grid-area: content;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: var(--background);
+  color: var(--foreground);
+}

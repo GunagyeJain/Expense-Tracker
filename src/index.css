@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+  --background: #f6f7f9;
+  --foreground: #21242c;
+
+  --card: #ffffff;
+  --card-foreground: #21242c;
+
+  --popover: #ffffff;
+  --popover-foreground: #21242c;
+
+  --primary: #3c83f6;
+  --primary-foreground: #ffffff;
+  --primary-light: #6da2f8;
+  --primary-dark: #0a5adb;
+
+  --secondary: #f1f2f3;
+  --secondary-foreground: #363d49;
+
+  --muted: #f1f2f3;
+  --muted-foreground: #6a707c;
+
+  --accent: #21c45d;
+  --accent-foreground: #ffffff;
+  --accent-light: #3bde77;
+
+  --destructive: #ef4343;
+  --destructive-foreground: #ffffff;
+
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #3c83f6;
+
+  --income: #21c45d;
+  --expense: #ef4343;
+  --transfer: #f3c72b;
+  --investment: #7c3bed;
+
+  --sidebar-background: #fafafa;
+  --sidebar-foreground: #3f3f46;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #3b82f6;
+}
+
+.dark {
+  --background: #0f131a;
+  --foreground: #f1f2f3;
+
+  --card: #181d25;
+  --card-foreground: #f1f2f3;
+
+  --popover: #181d25;
+  --popover-foreground: #f1f2f3;
+
+  --primary: #5593f7;
+  --primary-foreground: #0f131a;
+  --primary-light: #85b2f9;
+  --primary-dark: #0b64f4;
+
+  --secondary: #2b303b;
+  --secondary-foreground: #d6d8dc;
+
+  --muted: #2b303b;
+  --muted-foreground: #9196a1;
+
+  --accent: #25da67;
+  --accent-foreground: #0f131a;
+  --accent-light: #51e186;
+
+  --destructive: #e96363;
+  --destructive-foreground: #0f131a;
+
+  --border: #363d49;
+  --input: #363d49;
+  --ring: #5593f7;
+
+  --income: #25da67;
+  --expense: #e96363;
+  --transfer: #f4ce43;
+  --investment: #8c52ef;
+
+  --sidebar-background: #18181b;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #1d4ed8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #3b82f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* transition */
+  transition: background-color 0.2s ease, color 0.2s ease, border 0.2s ease;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: var(--background);
+}

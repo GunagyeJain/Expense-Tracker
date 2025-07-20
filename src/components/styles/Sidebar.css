@@ -1,0 +1,31 @@
+.logo img{
+    height: 1.6em;
+    margin: 16px;
+}
+
+.sidebar-option-btn {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+
+    text-decoration: none;
+
+    color: var(--foreground);
+
+    margin: 20px;
+
+    font-size: 1.1em;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-separator {
+    background-color: var(--border);
+    border: none;
+    height: 1px;
+}

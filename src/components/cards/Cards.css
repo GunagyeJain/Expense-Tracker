@@ -1,0 +1,13 @@
+.add-transaction-card-container {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    width: 50%;
+    padding: 20px;
+    
+}
+
+.info-card-container {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    width: 25%;
+}
