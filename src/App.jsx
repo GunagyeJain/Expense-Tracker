@@ -24,13 +24,14 @@ const App = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  if (isDarkMode) {
+    document.body.classList.add('dark');
+  } else {
+    document.body.classList.remove('dark');
+  }
+  
   useEffect(() => {
     localStorage.setItem('theme', JSON.stringify(isDarkMode));
-    if (isDarkMode) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
   }, [isDarkMode]);
 
   //sidebar open/close state

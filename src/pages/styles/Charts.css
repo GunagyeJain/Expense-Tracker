@@ -1,3 +1,9 @@
+.heading {
+    margin: 0px 5px 30px;
+    font-size: 1.3em;
+    color: var(--ring);
+}
+
 .charts-container {
     background-color: var(--muted);
     height: 100%;

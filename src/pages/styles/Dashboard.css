@@ -1,5 +1,63 @@
+.heading {
+    margin: 0px 5px 30px;
+    font-size: 1.3em;
+    color: var(--ring);
+}
+
 .dashboard-container {
-    background-color: var(--muted);
-    height: 100%;
-    width: 100%;
+  height: auto;
+  width: 100%;
+
+  display: grid;
+  gap: 20px;
+
+  /* Mobile-first: 1 column layout */
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "info-section"
+    "add-transaction-section"
+    "transaction-history-section"
+    "budget-overview-section";
+}
+
+.info-section {
+  grid-area: info-section;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+/* 600px to 1299px: 2-column cards, but layout still single column */
+@media (min-width: 600px) and (max-width: 1299px) {
+  .info-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ≥1300px: 4-column cards, 2-column layout for dashboard-container */
+@media (min-width: 1300px) {
+  .dashboard-container {
+    grid-template-columns: 1fr 1fr; /* ⚠️ Important: Match 2-area row */
+    grid-template-areas:
+      "info-section info-section"
+      "add-transaction-section transaction-history-section"
+      "budget-overview-section budget-overview-section";
+  }
+
+  .info-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Grid area assignment (no quotes!) */
+.add-transaction-section {
+  grid-area: add-transaction-section;
+}
+
+.transaction-history-section {
+  grid-area: transaction-history-section;
+}
+
+.budget-overview-section {
+  grid-area: budget-overview-section;
 }

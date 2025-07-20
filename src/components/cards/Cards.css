@@ -1,13 +1,64 @@
-.add-transaction-card-container {
-    background-color: var(--card);
-    color: var(--card-foreground);
-    width: 50%;
-    padding: 20px;
-    
+.info-card-container {
+  background-color: var(--card);
+  color: var(--card-foreground);
+
+  height: 150px;
+  width: 100%;
+  padding: 20px 24px;
+
+  border-radius: 12px;
+
+  transition: box-shadow 0.2s ease;
 }
 
-.info-card-container {
-    background-color: var(--card);
-    color: var(--card-foreground);
-    width: 25%;
+.add-transaction-card-container {
+  background-color: var(--card);
+  color: var(--card-foreground);
+
+  height: 250px;
+  width: 100%;
+  padding: 20px;
+
+  border-radius: 12px;
+
+  transition: box-shadow 0.2s ease;
+}
+
+.transaction-history-container {
+  background-color: var(--card);
+  color: var(--card-foreground);
+
+  min-height: 250px;
+  width: 100%;
+  padding: 20px;
+
+  border-radius: 12px;
+
+  transition: box-shadow 0.2s ease;
+}
+
+.budget-overview-container {
+  background-color: var(--card);
+  color: var(--card-foreground);
+
+  min-height: 250px;
+  width: 100%;
+  padding: 20px;
+
+  border-radius: 12px;
+
+  transition: box-shadow 0.2s ease;
+}
+
+.info-card-container:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+.add-transaction-card-container:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+.transaction-history-container:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+.budget-overview-container:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }

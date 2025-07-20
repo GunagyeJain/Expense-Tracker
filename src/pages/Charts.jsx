@@ -3,9 +3,14 @@ import './styles/Charts.css'
 
 const Charts = () => {
   return (
-    <div className='charts-container'>
-      Charts
-    </div>
+    <>
+      <div className="heading">
+        <h1>Charts</h1>
+      </div>
+      <div className='charts-container'>
+        Charts
+      </div>
+    </>
   )
 }
 

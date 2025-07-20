@@ -47,7 +47,7 @@
   --sidebar-ring: #3b82f6;
 }
 
-.dark {
+body.dark {
   --background: #0f131a;
   --foreground: #f1f2f3;
 
