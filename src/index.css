@@ -33,7 +33,9 @@
   --ring: #3c83f6;
 
   --income: #21c45d;
+  --income-dim: #21c45d1a;
   --expense: #ef4343;
+  --expense-dim: #ef43431a;
   --transfer: #f3c72b;
   --investment: #7c3bed;
 
@@ -80,6 +82,7 @@ body.dark {
   --ring: #5593f7;
 
   --income: #25da67;
+  --income-dim: #1A302B;
   --expense: #e96363;
   --transfer: #f4ce43;
   --investment: #8c52ef;

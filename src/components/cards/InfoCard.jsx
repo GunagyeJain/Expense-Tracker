@@ -1,12 +1,16 @@
-import React from 'react'
-import './Cards.css'
+import React from "react";
+import "./styles/Cards.css";
 
-const InfoCard = () => {
+const InfoCard = ({ title, icon, value, isExpense }) => {
   return (
-    <div className='info-card-container'>
-      Information Card TEST
+    <div className="info-card-container">
+      <div className="title">{title}</div>
+      <div className="info">
+        <div className={`value ${isExpense ? 'expense' : ''}`}>${value}</div>
+        <div className={`icon ${isExpense ? 'expense' : ''}`}>{icon}</div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default InfoCard
+export default InfoCard;
