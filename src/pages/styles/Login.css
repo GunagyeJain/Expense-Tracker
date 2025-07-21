@@ -1,0 +1,44 @@
+.login-page {
+  padding: 40px;
+  max-width: 400px;
+  margin: 100px auto;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: var(--card-foreground);
+}
+
+.login-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.login-form button {
+  padding: 10px;
+  font-size: 1em;
+  background-color: var(--primary);
+  color: var(--foreground);
+  border: none;
+  cursor: pointer;
+}
+.login-page p {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.login-page p button{
+  margin: 0px 0px;
+  border-radius: 3px;
+  border: none;
+  padding: 3px 8px;
+  background-color: var(--primary);
+  color: var(--foreground);
+}

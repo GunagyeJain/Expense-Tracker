@@ -1,5 +1,5 @@
 import "./styles/Dashboard.css";
-import AddTransactionCard from "../components/Cards/AddTransactionCard";
+import AddTransactionCard from "../components/cards/AddTransactionCard";
 import InfoCard from "../components/Cards/InfoCard";
 import BudgetOverviewCard from "../components/cards/BudgetOverviewCard";
 import TransactionHistoryCard from "../components/cards/TransactionHistoryCard";

@@ -7,7 +7,7 @@
   padding: 20px 24px;
 
   border-radius: 12px;
-
+  border: 1px solid var(--border);
   transition: box-shadow 0.2s ease;
 
   display: flex;
@@ -53,6 +53,7 @@
   background-color: var(--expense-dim);
 }
 
+
 .add-transaction-card-container {
   background-color: var(--card);
   color: var(--card-foreground);
@@ -61,11 +62,45 @@
   width: 100%;
   padding: 20px;
 
+  border: 1px solid var(--border);
   border-radius: 12px;
 
   transition: box-shadow 0.2s ease;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.add-transaction-card-title {
+  font-size: 1.5em;
+  align-self: start;
+}
+.add-transaction-card-btn {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-transaction-card-btn button{
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 50px;
+  padding: 2%;
+  border-radius: 10px;
+  background-color: var(--primary);
+  transition: transform 0.3s ease;
+  font-size: 1.2em;
+  color: var(--foreground);
+  border: none;
+}
+.add-transaction-card-btn button:hover{
+  transform: scale(1.01);
+}
+.muted {
+  color: var(--muted-foreground);
+}
 .transaction-history-container {
   background-color: var(--card);
   color: var(--card-foreground);
@@ -74,6 +109,7 @@
   width: 100%;
   padding: 20px;
 
+  border: 1px solid var(--border);
   border-radius: 12px;
 
   transition: box-shadow 0.2s ease;
@@ -87,6 +123,7 @@
   width: 100%;
   padding: 20px;
 
+  border: 1px solid var(--border);
   border-radius: 12px;
 
   transition: box-shadow 0.2s ease;

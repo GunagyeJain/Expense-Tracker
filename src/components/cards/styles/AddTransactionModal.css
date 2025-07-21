@@ -1,0 +1,51 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: var(--card);
+  color: var(--card-foreground);
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content input,
+.modal-content select {
+  background-color: var(--input);
+  color: var(--foreground);
+  border: none;
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.modal-content input:hover,
+.modal-content select:hover {
+  background-color: var(--muted);
+}
+.modal-content input:focus,
+.modal-content select:focus {
+  outline: none;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  width: 100px;
+  padding: 5px 20px;
+  background-color: var(--primary);
+  color: var(--foreground);
+  border: none;
+  border-radius: 3px;
+}

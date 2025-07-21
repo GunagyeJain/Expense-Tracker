@@ -1,57 +1,67 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
-//importing react router
-import { Routes, Route, Navigate } from 'react-router-dom';
+// Pages
+import Dashboard from "./pages/Dashboard";
+import Charts from "./pages/Charts";
+import Settings from "./pages/Settings";
+import Login from "./pages/Login";
 
-//importing pages
-import Dashboard from './pages/Dashboard';
-import Charts from './pages/Charts';
-import Settings from './pages/Settings';
+// Firebase
+import { auth } from "./services/firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
-//importing components
-import Header from './components/header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
+// Components
+import Header from "./components/header/Header";
+import Sidebar from "./components/sidebar/Sidebar";
 
 const App = () => {
-  //theme state
+  const navigate = useNavigate();
+
+  // Theme
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    const storedTheme = localStorage.getItem('theme');
+    const storedTheme = localStorage.getItem("theme");
     return storedTheme ? JSON.parse(storedTheme) : true;
   });
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
-  if (isDarkMode) {
-    document.body.classList.add('dark');
-  } else {
-    document.body.classList.remove('dark');
-  }
-  
   useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(isDarkMode));
+    localStorage.setItem("theme", JSON.stringify(isDarkMode));
+    document.body.classList.toggle("dark", isDarkMode);
   }, [isDarkMode]);
 
-  //sidebar open/close state
-  const [isSidebarOpen, setIsSidebarOpen] = useState(()=>{
-    const storedSidebarState = localStorage.getItem('sidebar');
-    return storedSidebarState ? JSON.parse(storedSidebarState) : (true);
+  const toggleDarkMode = () => setIsDarkMode((prev) => !prev);
+
+  // Sidebar
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
+    const stored = localStorage.getItem("sidebar");
+    return stored ? JSON.parse(stored) : true;
   });
 
   useEffect(() => {
-    localStorage.setItem('sidebar', JSON.stringify(isSidebarOpen));
-  }, [isSidebarOpen])
+    localStorage.setItem("sidebar", JSON.stringify(isSidebarOpen));
+  }, [isSidebarOpen]);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+  const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
+
+  // Firebase auth state
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    navigate("/login");
   };
 
   return (
-    <div className={`app-container ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+    <div className={`app-container ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
       <div className="sidebar">
-        <Sidebar isDarkMode={isDarkMode}/>
+        <Sidebar isDarkMode={isDarkMode} user={user} onLogout={handleLogout} />
       </div>
       <div className="header">
         <Header toggleSidebar={toggleSidebar} toggleDarkMode={toggleDarkMode} />
@@ -59,9 +69,10 @@ const App = () => {
       <div className="content">
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/charts" element={<Charts />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
+          <Route path="/charts" element={user ? <Charts /> : <Navigate to="/login" />} />
+          <Route path="/settings" element={user ? <Settings /> : <Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>
